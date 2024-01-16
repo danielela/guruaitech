@@ -1,0 +1,10 @@
+.text-bg-success{
+    background-color: rgb(179, 208, 179);
+}
+.text-bg-danger{
+    background-color: rgb(228, 117, 117);
+}
+
+.table-text-color{
+    color: green;
+}

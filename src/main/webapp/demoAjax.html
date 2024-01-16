@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Call to Servlet</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+    $(document).ready(function () {
+        // Perform AJAX call to the servlet
+        $.ajax({
+            url: 'quizSampleServlet', // Replace with the actual URL of your servlet
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Handle the JSON response in the success block
+                console.log('Received JSON response:', data);
+
+                var responseJson = JSON.stringify(data);
+                console.log(responseJson);
+
+                $('#output').html('');
+
+                $.each(data, function (index, question) {
+                    $('#output').append('<p>Question: ' + question.question + '</p>' +
+                                        '<p>Options: ' + question.options.join(', ') + '</p>' +
+                                        '<p>Correct Answer: ' + question.correctAnswer + '</p><hr>');
+                });
+
+                // Example: Display data in the output div
+                // $('#output').html('<p>Question: ' + data.question + '</p>' +
+                //                   '<p>Options: ' + data.options.join(', ') + '</p>' +
+                //                   '<p>Correct Answer: ' + data.correctAnswer + '</p>');
+            },
+            error: function (xhr, status, error) {
+                // Handle errors in the error block
+                console.error('Error:', status, error);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
