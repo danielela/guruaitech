@@ -198,7 +198,7 @@
                     <div class="row justify-content-center">
                         <div class="col-8" style="display: flex; flex-direction: column;">
                             <!--<div class="container-fluid" id="exam_table"></div><br><br>-->
-                            <div class="table-bordered " style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218); width: 100%" id="test_table"></div><br><br>
+                            <div class="table-bordered " style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218); width: 100%; height:100%; align-self: center; max-height: 710px; overflow-x: auto; overflow-y: auto;" id="test_table"></div><br><br>
                         </div>
                         <div class="col-4 p-2 rounded contact-form fadeIn"
                             style="display: flex; flex-direction: column;">

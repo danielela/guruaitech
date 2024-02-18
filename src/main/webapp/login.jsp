@@ -29,26 +29,29 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <style>
-        .password-toggle {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        .mb-4.text-start.position-relative {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+                        <style>
+                        .password-container {
+                        position: relative;
+                    }
 
-        .mb-4.text-start.position-relative input[type="submit"],
-        .mb-4.text-start.position-relative input[type="reset"] {
-            width: 48%; /* Adjust width as needed */
-        }
-         
-    </style>
+                    .password-container .input-group {
+                        position: relative;
+                    }
+
+                    .password-container input[type="password"] {
+                        padding-right: 35px; /* Adjust padding to make room for the eye icon */
+                    }
+
+                    .password-toggle {
+                        position: absolute;
+                        top: 50%;
+                        right: 10px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                        z-index: 2;
+                    }
+                            
+                        </style>
     
 </head>
 <body>
@@ -153,10 +156,16 @@
                             <label for="usernameId" class="form-label">User Name</label>
                             <input type="text" id="usernameId" name="user_name" class="form-control border-0 py-3" placeholder="User Name">
                         </div>
-                        <div class="mb-4 text-start text-black">
+                        <div class="password-container mb-4 text-start text-black">
                             <label for="passwordId" class="form-label">Password</label>
-                            <input type="password" id="passwordId" name="password" class="form-control border-0 py-3" placeholder="Password">
-                            <i class="bi bi-eye password-toggle" id="togglePassword"></i>
+                            <div class="input-group">
+                                <input type="password" id="passwordId" name="password" class="form-control border-0 py-3" placeholder="Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text password-toggle" id="togglePassword">
+                                        <i class="bi bi-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-4 text-start text-black">
                             Remember Me <input type="checkbox" name="remember_me" value="true">
@@ -174,6 +183,9 @@
                                <div class="p-3 mb-2 bg-primary text-white"><%= errorMessage %> </div>
 
                         <% } %>
+                        <div class="mb-4 text-start text-black">
+                            <a href="forgot_password.jsp" class="text-decoration-none">Forgot Password?</a>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -278,15 +290,16 @@
 
     <!-- Template Javascript -->
     <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordField = document.getElementById('passwordId');
+        $(document).ready(function () {
+    const passwordField = $("#passwordId");
+    const togglePassword = $("#togglePassword");
 
-        togglePassword.addEventListener('click', function () {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            this.classList.toggle('bi-eye');
-            this.classList.toggle('bi-eye-slash');
-        });
+    togglePassword.click(function () {
+        const type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+        passwordField.attr('type', type);
+        togglePassword.find('i').toggleClass('bi-eye bi-eye-slash');
+            });
+     });
     </script>
 
     <script src="js/main.js"></script>

@@ -1,3 +1,9 @@
+<% 
+    session = request.getSession(false);
+    if(session == null || session.getAttribute("userName") == null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +42,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Change Password</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="LogoutServlet">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,6 +85,7 @@
                                             <a class="nav-link" href="core_java.jsp">Core Java</a>
                                             <a class="nav-link" href="jee.jsp">JEE</a>
                                             <a class="nav-link" href="spring.jsp">Spring Framework</a>
+                                            <a class="nav-link" href="reactjs.jsp">React JS</a>
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -104,11 +111,22 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSettingsLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fas-settings"></i></div>
+                                Settings
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseSettingsLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="edit_profile.jsp">Edit Profile</a>
+                                    
+                                </nav>
+                            </div>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <%= session.getAttribute("userName") %>
                     </div>
                 </nav>
             </div>

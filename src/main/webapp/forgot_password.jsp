@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>HighTech - IT Solutions Website Template</title>
@@ -28,10 +27,35 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-</head>
 
+    <!-- Template Stylesheet -->
+                        <style>
+                        .password-container {
+                        position: relative;
+                    }
+
+                    .password-container .input-group {
+                        position: relative;
+                    }
+
+                    .password-container input[type="password"] {
+                        padding-right: 35px; /* Adjust padding to make room for the eye icon */
+                    }
+
+                    .password-toggle {
+                        position: absolute;
+                        top: 50%;
+                        right: 10px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                        z-index: 2;
+                    }
+                            
+                        </style>
+    
+</head>
 <body>
-    <form action="TestServlet" method="post">
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -39,20 +63,30 @@
     </div>
     <!-- Spinner End -->
 
+   
+
     <!-- Topbar Start -->
     <div class="container-fluid bg-dark py-2 d-none d-md-flex">
         <div class="container">
             <div class="d-flex justify-content-between topbar">
                 <div class="top-info">
-                    <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Karadigollapatti, India</small>
-                    <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>gurukalvi.system@gmail.com</small>
+                    <small class="me-3 text-white-50"><a href="#"><i
+                                class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Karadigollapatti,
+                        India</small>
+                    <small class="me-3 text-white-50"><a href="#"><i
+                                class="fas fa-envelope me-2 text-secondary"></i></a>gurukalvi.system@gmail.com</small>
                 </div>
-                <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : Start Learning for your future</small></div>
+                <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : Start Learning for your
+                        future</small></div>
                 <div class="top-link">
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                            class="fab fa-facebook-f text-primary"></i></a>
+                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                            class="fab fa-twitter text-primary"></i></a>
+                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i
+                            class="fab fa-instagram text-primary"></i></a>
+                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i
+                            class="fab fa-linkedin-in text-primary"></i></a>
                 </div>
             </div>
         </div>
@@ -66,7 +100,8 @@
                 <a href="index.jsp" class="navbar-brand">
                     <h1 class="text-black-50 fw-bold d-block">Guru Tech </h1>
                 </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
@@ -79,27 +114,12 @@
                                 <a href="java.jsp" class="dropdown-item">Java</a>
                                 <a href="python.jsp" class="dropdown-item">Python</a>
                                 <a href="reactjs.jsp" class="dropdown-item">ReactJs</a>
-                                
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active text-secondary" data-bs-toggle="dropdown">Test</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="edit_topic.jsp" class="dropdown-item">Add/Edit Topics</a>
-                                <a href="edit_subtopic.jsp" class="dropdown-item">Add/Edit SubTopic</a>
-                                <a href="create_question.jsp" class="dropdown-item"> Create Questions</a>
-                                <a href="edit_question.jsp " class="dropdown-item"> Edit Question</a>
-                                <a href="create_test.jsp" class="dropdown-item"> Create Test</a>
-                                <a href="edit_test.jsp" class="dropdown-item">Edit Test</a>
-                                <a href="test_question.jsp" class="dropdown-item">Test Question </a>
                             </div>
                         </div>
                         <a href="testimonial.jsp" class="nav-item nav-link">Testimonial</a>
                         <a href="contact.jsp" class="nav-item nav-link">Contact</a>
-                        <a href="login.jsp" class="nav-item nav-link" id="loginSection">Logout</a>
-                        <a href="#" class="nav-item nav-link" onclick="logout()" id="logoutSection" style="display: none;">Logout</a>                    </div>
+                        <a href="login.jsp" class="nav-item nav-link active text-secondary">Login</a>
+                    </div>
                 </div>
                 <div class="d-none d-xl-flex flex-shirink-0">
                     <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
@@ -123,59 +143,33 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5">
         <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Create Test</h1>
-
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Login</h1>
+            
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="p-2 rounded contact-form fadeIn" data-wow-delay=".5s">
-
-                        <form class="row g-3 needs-validation" novalidate>
-                                
-                            <div class="mb-3">
-                                <select id="mainTopic" class="form-select" name="test_id" aria-label="Select Main Topic" ></select>
-                               <!--  <select class="form-select" name="test_id" required aria-label="select example"  >
-                                  <option value="">Select a Topic</option>
-                                  <option value="1">Data Types</option>
-                                  <option value="2">Array</option>
-                                  <option value="3">Confitions</option>
-                                </select> -->
-                               </div>
-                                <div class="mb-4">
-                                    <input type="text" name="test_name" class="form-control border-0 py-3" placeholder="Test Name">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="text" class="form-control border-0 py-3" name="test_duration" placeholder="Test Duration in minutes">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="datetime-local" name="start_date" class="form-control border-0 py-3" placeholder="Start Date and Time">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="datetime-local" name="end_date" class="form-control border-0 py-3" placeholder="End Date and Time">
-                                </div>
-                                <div class="mb-4">
-                                    <input type="text" id="formGroupExampleInput6" name="test_discription"
-                                        class="form-control border-0 py-3" placeholder="Test Description">
-                                </div>
-                                <div class="text-start d-flex justify-content-center">
-                                    <button class="btn btn-dark  text-white py-3 px-5" name="submit+" type="submit">Submit +</button> &nbsp;
-                                    <button class="btn btn-dark  text-white py-3 px-5" type="submit">Create</button> &nbsp;
-                                    <button class="btn btn-dark  text-white py-3 px-5" type="reset">Reset</button> &nbsp;
-                                </div>  
-                             </form>    
+                        <form action="EmailSender" method="post">
+                        <div class="mb-4 text-start text-black">
+                            <label for="usernameId" class="form-label">Email</label>
+                            <input type="text" id="usernameId" name="email" class="form-control border-0 py-3" placeholder="User Name">
+                        </div>
+                        
+                        <div class="mb-4 text-start position-relative">
+                            <input type="submit" value="Submit" class="btn btn-dark text-white py-3 px-5 me-3">
+                            <input type="reset" value="Reset" class="btn btn-dark text-white py-3 px-5">
+                        </div>
+                        
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Page Header End -->
-
-
-
-
+  
     <!-- Footer Start -->
     <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
         <div class="container pt-5 pb-4">
@@ -184,8 +178,8 @@
                     <a href="index.jsp">
                         <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
                     </a>
-                    <p class="mt-4 text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facere
-                        delectus qui placeat inventore consectetur repellendus optio debitis.</p>
+                    <p class="mt-4 text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+                        facere delectus qui placeat inventore consectetur repellendus optio debitis.</p>
                     <div class="d-flex hightech-link">
                         <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i
                                 class="fab fa-facebook-f text-primary"></i></a>
@@ -243,7 +237,7 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <span class="text-light"><a href="#" class="text-secondary"><i
-                                class="fas fa-copyright text-secondary me-2"></i>Your Site Name</a>, All right
+                                class="fas fa-copyright text-secondary me-2"></i>Guru AI tech.,</a>, All right
                         reserved.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
@@ -270,58 +264,10 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
 
 
-$(document).ready(function () {
-            // Load Main Topics on page load
-            $.ajax({
-                    
-                url: 'loadMainTopicServlet',
-                method: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    // Populate Main Topic dropdown
-                    var mainTopicDropdown = $('#mainTopic');
-                    $.each(data, function (index, item) {
-                        mainTopicDropdown.append($('<option>', {
-                            value: item.id,
-                            text: item.name
-                        }));
-                    });
-
-                    // Trigger change event to load subtopics based on the initially selected main topic
-                    mainTopicDropdown.change();
-                }
-            });
-
-        });
-
-        // Check if the user is logged in
-        function checkLoginStatus() {
-            const isLoggedIn = localStorage.getItem('loggedIn');
-
-            if (isLoggedIn) {
-                document.getElementById('loginSection').style.display = 'none';
-                document.getElementById('logoutSection').style.display = 'block';
-            } else {
-                document.getElementById('loginSection').style.display = 'block';
-                document.getElementById('logoutSection').style.display = 'none';
-            }
-        }
-
-        // Simulating logout by clearing local storage
-        function logout() {
-            localStorage.removeItem('loggedIn');
-            checkLoginStatus();
-        }
-
-        // Call this function to check login status on page load
-        checkLoginStatus();
-    </script>
-</form>
+    
 </body>
 
 </html>

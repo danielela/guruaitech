@@ -25,15 +25,17 @@ public class GetAllQuestionServlet extends HttpServlet {
         StringBuilder resultTable = new StringBuilder();
         resultTable.append("<table class=\"table table-striped\" >");
         resultTable.append(
-                "<thead><tr><th>Question ID</th><th>Topic ID</th><th>Question Text</th><th>Option A</th><th>Option B</th><th>Option C</th><th>Option D</th><th>Correct Option</th><th>Explaination</th></tr></thead>");
+                "<thead><tr><th>Question ID</th><th>SubTopic ID</th><th>Question Text</th><th>Option A</th><th>Option B</th><th>Option C</th><th>Option D</th><th>Correct Option</th><th>Explaination</th></tr></thead>");
 
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM onlinetest.Questions");
+			ResultSet resultSet = statement.executeQuery("select q.*,st.subtopic_name from onlinetest.Questions q, onlinetest.Subtopics st where q.subtopic_id=st.subtopic_id");
+            
+            //ResultSet resultSet = statement.executeQuery("SELECT * FROM onlinetest.Questions");
             while (resultSet.next()) {
                 String question_id = resultSet.getString(1);
                 resultTable.append("<tr><td> <a href='#' onclick=\"loadQuestion(" + question_id + ")\">" + question_id
-                        + "</a> </td> <td>" + resultSet.getString(2) + "</td><td>" + resultSet.getString(3)
+                        + "</a> </td> <td>" + resultSet.getString("subtopic_name") + "</td><td>" + resultSet.getString(3)
                         + "</td><td>" + resultSet.getString(4) + "</td><td>" + resultSet.getString(5) + "</td><td>"
                         + resultSet.getString(6) + "</td><td>" + resultSet.getString(7) + "</td><td>"
                         + resultSet.getString(8) + "</td><td>" + resultSet.getString(9) + "</td></tr>");

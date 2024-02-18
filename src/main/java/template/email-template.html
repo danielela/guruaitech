@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Email Template</title>
+    <link href="http://localhost:8080/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .rounded-box {
+            border: 1px solid #000000;
+            position: -50px -50px;
+
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #b29e9e;
+            text-align: center; /* Added property */
+        }
+        .header {
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            background: #f3f0ef;
+        }
+        
+    </style>
+</head>
+<body>
+   
+        <div class="container">
+            
+            <a href="index.jsp" class="navbar-brand header bg-primary">
+                <h1 class="fw-bold d-block custom-heading">Guru AI Tech., </h1>
+            </a>
+            <div class="rounded-box contact-form">
+            <p>Your one-time passcode is: 123<strong th:text="${otp}"></strong></p>
+            <a href="http://localhost:8080/reset_password.jsp?email=daniel.elavarasan@gmail.com" style="display: inline-block; padding: 10px 20px; background-color: #1890c3; color: #fff; text-decoration: none;">Reset Password</a>
+            <p>Thank you!</p>
+            </div>  
+        
+        </div>
+</body>
+</html>
+
+        
+       
+    

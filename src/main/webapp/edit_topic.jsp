@@ -40,31 +40,34 @@
     <!-- Add this CSS to your existing styles -->
     <style>
        
-    .container {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
+       .container {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .table-container,
-    .form-container {
-        flex: 1;
-        max-height: 500px; /* Set a maximum height for the containers */
-    }
+        .table-container,
+        .form-container {
+            flex: 1;
+            max-height: 600px;
+            
+        }
 
-    .table-bordered {
-        text-decoration-color: rgb(164, 33, 33);
-        background-color: rgb(234, 222, 218);
-        width: 100%;
-        height: 100%;
-        border: 1px solid #ddd; /* Add this line for border styling */
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    }
+        .table-bordered {
+            background-color: rgb(234, 222, 218);
+            width: 100%;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
 
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-    }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Reduce space between buttons */
+        .btn-space {
+            margin-right: 5px;
+        }
      </style>
         
 </head>
@@ -255,10 +258,6 @@
                                     </div>
                                 </form>
                             </div>
-
-<!-- ... (remaining code) ... -->
-
-<!-- ... (remaining code) ... -->
 
                     </div>
                 </div>

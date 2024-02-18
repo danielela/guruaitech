@@ -1,0 +1,11 @@
+# javamail.default.address.map
+# This file maps default address types to the corresponding "real"
+# address types.  The "real" address types are the ones that the
+# mail.imap.fetchsize and mail.pop3.fetchsize property settings
+# refer to.  For example, the "real" address type for "rfc822" might
+# be "mime".  Or the "real" address type for "rfc2369" might be
+# "mime".  Or it might be "rfc822".  It all depends on what the
+# server supports.  You can find out what address types are supported
+# by a server by enabling session debugging and watching what it
+# advertises.  The format of this file is key=value, one per line.
+rfc822=mime

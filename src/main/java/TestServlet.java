@@ -56,14 +56,14 @@ public class TestServlet extends HttpServlet {
         }
         try (Connection Connection = DriverManager.getConnection(
                 "jdbc:mysql://167.86.101.123:3306/onlinetest", "noroot", "W3lc0m32024");) {
-            String insert_Query = "INSERT INTO `onlinetest`.`Test` (`test_id`, `test_name`, `test_duration`, `start_time`, `end_time`, `test_description`) VALUES (?,?,?,?,?,?)";
+            String insert_Query = "INSERT INTO `onlinetest`.`Test` ( `test_name`, `test_duration`, `start_time`, `end_time`, `test_description`) VALUES (?,?,?,?,?)";
             try (PreparedStatement preparedStatement = Connection.prepareStatement(insert_Query)) {
-                preparedStatement.setString(1, test_id);
-                preparedStatement.setString(2, test_name);
-                preparedStatement.setString(3, test_duration);
-                preparedStatement.setTimestamp(4, timestamp);
-                preparedStatement.setString(5, end_time);
-                preparedStatement.setString(6, test_description);
+                // preparedStatement.setString(1, test_id);
+                preparedStatement.setString(1, test_name);
+                preparedStatement.setString(2, test_duration);
+                preparedStatement.setTimestamp(3, timestamp);
+                preparedStatement.setString(4, end_time);
+                preparedStatement.setString(5, test_description);
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 if (rowsAffected > 0) {

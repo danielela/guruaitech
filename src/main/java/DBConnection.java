@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
-    public static Connection getConnection() {
+public static Connection getConnection() {
         Connection conn = null; // declare connection object
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

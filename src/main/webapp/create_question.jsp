@@ -20,9 +20,22 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
-        <script>
-            
-        </script>
+        <style>
+            /* Add this style for vertical scrollbar */
+            .table-container {
+                max-height: 400px;
+                overflow-y: auto;
+            }
+        
+            /* Add this style for horizontal scrollbar */
+            .table-container table {
+                table-layout: fixed;
+                width: 100%;
+                white-space: nowrap;
+                overflow-x: auto;
+            }
+        </style>
+        
     </head>
     <body>
         <!-- Spinner Start -->
@@ -190,36 +203,40 @@
                                     ></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <input
-                                        type="text"
+                                    <textarea
+                                        class="w-100 form-control border-0 py-3"
                                         name="option_a"
-                                        class="form-control border-0 py-3"
+                                        rows="3"
+                                        cols="10"
                                         placeholder="Option A"
-                                    >
+                                    ></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <input
-                                        type="text"
+                                    <textarea
+                                        class="w-100 form-control border-0 py-3"
                                         name="option_b"
-                                        class="form-control border-0 py-3"
+                                        rows="3"
+                                        cols="10"
                                         placeholder="Option B"
-                                    >
+                                    ></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <input
-                                        type="text"
+                                    <textarea
+                                        class="w-100 form-control border-0 py-3"
                                         name="option_c"
-                                        class="form-control border-0 py-3"
+                                        rows="3"
+                                        cols="10"
                                         placeholder="Option C"
-                                    >
+                                    ></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <input
-                                        type="text"
+                                    <textarea
+                                        class="w-100 form-control border-0 py-3"
                                         name="option_d"
-                                        class="form-control border-0 py-3"
+                                        rows="3"
+                                        cols="10"
                                         placeholder="Option D"
-                                    >
+                                    ></textarea>
                                 </div>
                                 <div class="mb-4">
                                     <input

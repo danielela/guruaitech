@@ -1,0 +1,7 @@
+/target
+/target/classes/**.*
+.settings
+src/main/.DS_Store
+/target/classes/
+target/ROOT.war
+target/classes/*.class

@@ -63,12 +63,9 @@
                     type: "GET",
                     url: "GetAllSubTopicServlet",
                     success: function (response) {
-                        //$("#result").html("Success: " + response);
-                        // console.log(response);
                         $("#subtopic_table").append(response);
                     },
                     error: function (xhr, status, error) {
-                        //$("#result").html("Error: " + error);
                         console.log("error in ajax call " + error + " status " + status);
                     }
                 });

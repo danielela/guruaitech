@@ -92,33 +92,37 @@
                 console.log("correctAnswer ="+correctAnswerArray+" \n selectedAnswer = "+selectedAnswerArray);
 
                 // Create answer options list
-                let answerList = document.createElement('ul');
+                let answerList = document.createElement('ol');
                 answerList.className = 'answer-options';
                 var listItemArray = [];
                 
                 answerOptions.forEach((option, index) => {
                     var newIndex = index+1;
                     let listItem = document.createElement('li');
-                    listItem.textContent = option;
+                    //listItem.textContent = option;
+                    let optionPre = document.createElement('pre');
+                    optionPre.textContent = option;
+                    listItem.appendChild(optionPre);
 
                     // Check if the current option value is in both correct and selected answers
                     if (correctAnswerArray.includes(newIndex) && selectedAnswerArray.includes(newIndex)) {
-                        listItem.className = 'text-bg-success'; // Green for correct and selected
+                        optionPre.className = 'bg-success text-white'; // Green for correct and selected
                     } else if (selectedAnswerArray.includes(newIndex)) {
-                        listItem.className = 'text-bg-danger'; // Red for selected but incorrect
+                        optionPre.className = 'bg-danger text-white'; // Red for selected but incorrect
                     }
                     listItemArray.push(listItem);
                     answerList.appendChild(listItem);
                 });
 
                 listItemArray.forEach((listItem, index) => {
+                    var preElement = listItem.querySelector('pre');
                     var newIndex = index+1;
                     if (correctAnswerArray.includes(newIndex) && !selectedAnswerArray.includes(newIndex)) {
-                        listItem.className = 'text-bg-warning';
+                        preElement.className = 'text-bg-warning';
                     }
 
                     if (selectedAnswerArray.includes(newIndex) && !correctAnswerArray.includes(newIndex)) {
-                        listItem.className = 'text-bg-danger'; // Mark in red if selected but not correct
+                        preElement.className = 'bg-danger text-white'; // Mark in red if selected but not correct
                     }
                 });
 
@@ -274,26 +278,20 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                <p class="mb-0">
-                                    This page is an example of using static navigation. By removing the
-                                    <code>.sb-nav-fixed</cod`e>
-                                    class from the
-                                    <code>body</code>
-                                    , the top navigation and side navigation will become static on scroll. Scroll down this page to see an example.
-                                </p>
-
                                 <div class="card-body" id="test_table" >
                                     
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="card mb-4">
+                            <div class="card-body">
                         <div class="table-bordered " style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218); width: 100%" id="result_table"></div><br><br> 
                         <h2 class="table-text-color" >Test Results</h2>
-                        <div class="table-bordered rounded-lg border-4 border-success" style="text-decoration-color: rgb(164, 33, 33); width: 100%" id="answer_table">
+                        <div class="table-bordered rounded-lg border-4 border-success" style="text-decoration-color: rgb(164, 33, 33); width: 40%; word-wrap: break-word;" id="answer_table">
                             
                         </div>
-                        
+                        </div>
+                        </div>
 
                         
 

@@ -35,30 +35,6 @@
     <link href="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-/* Add these styles to fix the table header and make tbody scrollable 
-table {
-    display: block;
-    overflow-x: auto;
-    max-height: 500px;
-}
-
-table thead
-table thead tbody {
-    display: block;
-}
-
-table tbody {
-    overflow-y: auto;
-}
-
-table th, table td {
-    width: 200px; 
-    text-align: left;
-}
-*/
-</style>
-
 </head>
 
 <body>
@@ -134,22 +110,8 @@ table th, table td {
                 
                 url: "TestExistingQuestionServlet",
                 success: function (response) {
-
-                    //var questions = JSON.parse(response).questions;
-                    //     console.log(questions);
                     $("#existing_test_table").html(response);
-                    //$("#collapseTwo").removeClass("show");
-
-                    // Add the 'show' class to $("#collapseTwo")
-                    //$("#collapseThree").addClass("show");
-                    //$("#collapseFour").addClass("show");
-
-                    //$("#headingTwo").children("button").removeClass("bg-success");
-                    //$("#headingTwo").children("button").addClass("bg-danger");
-                    //$("#headingThree").children("button").removeClass("bg-danger");
-                    //$("#headingThree").children("button").addClass("bg-success");
-
-                    //document.getElementById("collapseThree").scrollIntoView();
+                    
                 },
                 error: function (xhr, status, error) {
                     console.log("error in ajax call " + error + " status " + status);
@@ -412,45 +374,7 @@ table th, table td {
                             </div>
                         </form>
                     </div>
-                
-                
                 </div>
-                
-
-                <!--  *************************************  
-                <div class="row justify-content-center">
-                    <div class="col-8" style="display: flex; flex-direction: column;">
-                        
-                        <div class="table-bordered"
-                        style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218); width: 150%; height:100%; align-self: center" id="test_table"></div><br><br>
-                    </div>
-                </div>
-                <div class="row bg-primary text-white justify-content-center"> 
-                    <div class="col-2" style="display: flex; flex-direction: column;"  > Test ID: <dev id="test_id"></dev> <input type="hidden" id="test_id_value" name="test_id_value" value="" ></input>  </div>
-                    <div class="col-2" style="display: flex; flex-direction: column;" >Name : <div id="test_name"></div> <input type="hidden" id="test_name_value" name="test_name_value" value="" ></input> </div>
-                    <div class="col-2" style="display: flex; flex-direction: column;"  > Duration: <div id="test_duration"></div></div>
-                    <div class="col-4" style="display: flex; flex-direction: column;">
-                        Topic: 
-
-                        <select id="mainTopic" class="form-select mb-2 " name="topic" aria-label="Select Main Topic" ></select>
-                        
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <form action="AddTestQuestionServlet" method="get"></form>
-                        <div class="col-8" style="display: flex; flex-direction: column;">
-                            <div class="table-bordered"
-                                style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218); width: 150%; height:100%; align-self: center; overflow: auto;" id="test_question_table">
-                            </div><br><br>
-                            <div class="text-start d-flex justify-content-center">
-                                <input type="submit" value="Submit" class="btn btn-dark  text-white py-3 px-5" style="margin-right: 75px;"> 
-                                <input type="reset" value="Reset" class="btn btn-dark  text-white py-3 px-5">
-                                
-                            </div>
-                        </div>
-                    </form>
-                </div>  -->
-                 <!--  *************************************  -->
             </div>
         </div>
     </div>

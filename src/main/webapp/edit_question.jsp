@@ -37,7 +37,27 @@
     
     <!-- <link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet">
      -->
-    
+    <style>
+ .scroll-container {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 700px; /* Adjust as needed */
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100%; /* Table width will be 100% of the container */
+        }
+
+        .question-table {
+            text-decoration-color: rgb(164, 33, 33);
+            background-color: rgb(234, 222, 218);
+            height:1000px;
+        }
+    </style>
 
     
 </head>
@@ -193,9 +213,15 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-8" style="display: flex; flex-direction: column;" >
-                     <div class="table-responsive table-bordered" style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218);" id="question_table">
-                     </div><br><br>    
-                         
+
+                            <!-- Your table content here -->
+                            
+                            <div class="scroll-container">
+                             <div class="horizontal-scroll">
+                                <div class="table-responsive table-bordered" style="text-decoration-color: rgb(164, 33, 33); background-color: rgb(234, 222, 218);" id="question_table">
+                                </div>
+                                </div>
+                            </div>  
                     </div>
                     <div class="col-4 p-2 rounded contact-form fadeIn" style="display: flex; flex-direction: column;">
                         <form class="row g-3 needs-validation" novalidate>
@@ -204,26 +230,59 @@
                                 <input type="hidden" id="formGroupExampleInput0" name="question_id" >
                                 <input type="text" id="formGroupExampleInput1" name="topicid"
                                     class="form-control border-0 py-3" placeholder="Topic ID" readonly>
+
                             </div>
                             <div class="mb-4">
-                                <input type="text" id="formGroupExampleInput2" name="question_text"
-                                    class="form-control border-0 py-3" placeholder="Question Text">
+                                    <textarea
+                                        id="formGroupExampleInput2"
+                                        class="w-100 form-control border-0 py-3"
+                                        rows="6"
+                                        cols="5"
+                                        name="question_text"
+                                        placeholder="Question Text"
+                                        required
+                                    ></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="text" id="formGroupExampleInput3" name="option_a"
-                                    class="form-control border-0 py-3" placeholder="Option A">
+                                    <textarea
+                                    id="formGroupExampleInput3"
+                                    class="w-100 form-control border-0 py-3"
+                                    name="option_a"
+                                    rows="3"
+                                    cols="5"
+                                    placeholder="Option A"
+                                ></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="text" id="formGroupExampleInput4" name="option_b"
-                                    class="form-control border-0 py-3" placeholder="Option B">
+                               
+                                    <textarea
+                                    id="formGroupExampleInput4"
+                                    class="w-100 form-control border-0 py-3"
+                                    name="option_b"
+                                    rows="3"
+                                    cols="5"
+                                    placeholder="Option B"
+                                ></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="text" id="formGroupExampleInput5" name="option_c"
-                                    class="form-control border-0 py-3" placeholder="Option C">
+                                    <textarea
+                                    id="formGroupExampleInput5"
+                                    class="w-100 form-control border-0 py-3"
+                                    name="option_c"
+                                    rows="3"
+                                    cols="5"
+                                    placeholder="Option C"
+                                ></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="text" id="formGroupExampleInput6" name="option_d"
-                                    class="form-control border-0 py-3" placeholder="Option D">
+                                <textarea
+                                    id="formGroupExampleInput6"
+                                    class="w-100 form-control border-0 py-3"
+                                    name="option_d"
+                                    rows="3"
+                                    cols="5"
+                                    placeholder="Option D"
+                                ></textarea>
                             </div>
                             <div class="mb-4">
                                 <input type="text" id="formGroupExampleInput7" name="correct_option"

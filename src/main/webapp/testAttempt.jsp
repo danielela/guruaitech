@@ -188,11 +188,11 @@
                     }
 
                             const questionData = quizData[index];
-                            console.log("loadQuestion questionData:", questionData);
+                            //console.log("loadQuestion questionData:", questionData);
                             var questionElement = $("<div>");
-                            questionElement.addClass("question mb-3 p-3 square");
-                            console.log("questionData.question = "+ questionData.question);
-                            questionElement.html("<p> <pre> "+questionData.question+"</pre></p>");
+                            questionElement.addClass("question mb-4 p-3 h-50 square");
+                            //console.log("questionData.question = "+ questionData.question);
+                            questionElement.html("<p> <pre style='min-width: 100%; min-height: 200px; border: 1px solid black; overflow: auto;' > "+questionData.question+"</pre></p> </div>");
 
                             var optionContainer = $("<div>");
                             optionContainer.addClass("option-container");
@@ -200,21 +200,16 @@
                             questionData.options.forEach((option, optionIndex) => {
                                 const inputId = `q${index}_o${optionIndex}`;
                                 var actualCorrectAnswers = questionData.correctAnswer;
-                                console.log("inputId = "+inputId+ " actualCorrectAnswers "+actualCorrectAnswers);
+                                //console.log("inputId = "+inputId+ " actualCorrectAnswers "+actualCorrectAnswers);
                                     optionContainer.append(`
                                         <a href="#" class="custom-control ${actualCorrectAnswers.length > 1 ? 'custom-checkbox' : 'custom-radio'}" onclick="selectOption('${inputId}')">
                                             <input type="${actualCorrectAnswers.length > 1 ? 'checkbox' : 'radio'}" id="${inputId}" name="q${index}" class="custom-control-input" value="${(optionIndex + 1)}">
-                                            <label class="custom-control-label" for="${inputId}">${option}</label>
+                                            
+                                            <pre class="custom-control-label" for="${inputId}">${option}</pre>
+                                            
                                         </a>
                                     `);
-                                /*                               
-                                optionContainer.append(`
-                                    <a href="#" class="custom-control custom-radio" onclick="selectOption('${inputId}')">
-                                        <input type="radio" id="${inputId}" name="q${index}" class="custom-control-input" value="${option}">
-                                        <label class="custom-control-label" for="${inputId}">${option}</label>
-                                    </a>
-                                `);
-                                */
+                              
                             });
 
                             questionElement.append(optionContainer);
@@ -240,16 +235,16 @@
                 function updateButtons() {
                     if (currentQuestionIndex === 0) {
                         $(nextBtn).show();
-                        $(prevBtn).hide();
+                        $("#prevBtn").css("display", "none");
                         $(submitBtn).hide();
                     } else if (currentQuestionIndex === quizData.length - 1) {
                         $(nextBtn).hide();
-                        $(prevBtn).show();
+                        $("#prevBtn").css("display", "none");
                         $(submitBtn).show();
                     } else {
                         
                         $(nextBtn).show();
-                        $(prevBtn).show();
+                        $("#prevBtn").css("display", "none");
                         $(submitBtn).hide();
 
                     }
@@ -290,6 +285,9 @@
 
                 function submitQuiz() {
                     clearInterval(countdownTimer);
+                    $(nextBtn).hide();
+                    $(prevBtn).hide();
+                    $(submitBtn).hide();
                     checkAnswers();
                     // alert("Quiz submitted!");
                 }
@@ -314,11 +312,12 @@
                         //document.querySelector(`input[name="q${index}"]:checked`);
                         const selectedOption = selectedAnswer[index];
                         userSelectedAnswerValue[index] = selectedOption;
-                        const correctAnsArray = question.correctAnswer.split(',');
-                        console.log("correctAnsArray = "+correctAnsArray);
+                        const correctAnsArray = question.correctAnswer.split(',').map(item => item.trim());
+                        console.log("correctAnsArray = " + correctAnsArray);
                         if (selectedOption && arraysHaveSameItems(selectedOption, correctAnsArray)) {
                             correctCount++;
                         }
+                        
                     });
 
                     const percentage = (correctCount / quizData.length) * 100;
@@ -371,13 +370,13 @@
 
                 }
 
-                function tryAgain() {
-                    currentQuestionIndex = 0;
-                    loadQuestion(currentQuestionIndex);
-                    startCountdown(duration);
-                    $("#quiz-container").css("display", "block");
-                    $("#result-container").css("display", "none");
-                }
+                // function tryAgain() {
+                //     currentQuestionIndex = 0;
+                //     loadQuestion(currentQuestionIndex);
+                //     startCountdown(duration);
+                //     $("#quiz-container").css("display", "block");
+                //     $("#result-container").css("display", "none");
+                // }
 
                 function formatTime(seconds) {
                     const minutes = Math.floor(seconds / 60);
@@ -640,11 +639,14 @@
                                         <p id="percentage"></p>
                                         <p id="time-spent"></p>
                                         <p id="db-saved"></p>
-                                        <button class="btn btn-primary mr-3" onclick="checkAnswers()"
+                                        <!--                                        
+                                             <button class="btn btn-primary mr-3" onclick="checkAnswers()"
                                             id="checkAnswersBtn">
                                             Check Your Answers
                                         </button>
                                         <button class="btn btn-success" onclick="tryAgain()">Try Again</button>
+                                        -->
+
                                     </div>
 
                                 </div>

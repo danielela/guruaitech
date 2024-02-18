@@ -29,13 +29,14 @@ public class GetAllSubTopicServlet extends HttpServlet {
 
         try {
             Statement stat = connection.createStatement();
-            ResultSet resultSet = stat.executeQuery("SELECT * FROM onlinetest.Subtopics");
+            ResultSet resultSet = stat.executeQuery("SELECT st.*,t.topic_name FROM onlinetest.Subtopics st, onlinetest.Topics t where st.topic_id=t.topic_id");
+            //ResultSet resultSet = stat.executeQuery("SELECT * FROM onlinetest.Subtopics");
             while (resultSet.next()) {
                 String subtopic_id = resultSet.getString(1);
                 resultTable.append("<tr><td> <a href='#' onclick=\"loadSubTopic(" + subtopic_id + ")\">" + subtopic_id
                         + "</a> </td><td>"
-                        + resultSet.getString(2)
-                        + "</td><td>" + resultSet.getString(3) + "</td></tr>");
+                        + resultSet.getString("topic_name")
+                        + "</td><td>" + resultSet.getString(3) +"</td></tr>");
 
             }
             resultTable.append("</table>");

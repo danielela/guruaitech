@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HighTech - IT Solutions Website Template</title>
+    <title>Guru AI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -25,17 +25,21 @@
      <!-- Include string-similarity library from a CDN -->
   <script src="https://cdn.jsdelivr.net/npm/string-similarity@4.0.4/umd/string-similarity.min.js"></script>
 
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
    <script src="js/micScript.js"></script>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BMLXRHXCZR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BMLXRHXCZR');
+</script>
     <style>
 
         .mic_btn {
@@ -279,10 +283,9 @@
             <div class="d-flex justify-content-between topbar">
                 <div class="top-info">
                     <small class="me-3 text-white-50"><a href="#"><i
-                                class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Karadigollapatti,
-                        India</small>
+                                class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Karadigollapatti, TN, India</small>
                     <small class="me-3 text-white-50"><a href="#"><i
-                                class="fas fa-envelope me-2 text-secondary"></i></a>gurukalvi.system@gmail.com</small>
+                                class="fas fa-envelope me-2 text-secondary"></i></a>admin@guruaitech.com</small>
                 </div>
                 <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : Start Learning for your
                         future</small></div>
@@ -306,7 +309,7 @@
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-0">
                 <a href="index.jsp" class="navbar-brand">
-                    <h1 class="fw-bold d-block">Guru Tech., </h1>
+                    <h1 class="fw-bold d-block">Guru AI Tech., </h1>
                 </a>
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -333,18 +336,7 @@
                     </div>
                 </div>
                 <div class="d-none d-xl-flex flex-shirink-0">
-                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                        <a href="" class="position-relative animated tada infinite">
-                            <i class="fa fa-phone-alt text-white fa-2x"></i>
-                            <div class="position-absolute" style="top: -7px; left: 20px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="d-flex flex-column pe-4 border-end">
-                        <span class="text-white-50">Have any questions?</span>
-                        <span class="text-secondary">Call: + 0123 456 7890</span>
-                    </div>
+                    
                     <div class="d-flex align-items-center justify-content-center ms-4 ">
                         <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
 
@@ -373,13 +365,10 @@
                     <img src="img/index-1.jpg" class="img-fluid" alt="First slide">
                     <div class="carousel-caption">
                         <div class="container carousel-content">
-                            <h6 class="text-secondary h4 animated fadeInUp">Best IT Solutions</h6>
-                            <h1 class="text-white display-1 mb-4 animated fadeInRight">An Innovative IT Solutions Agency
+                            <h6 class="text-secondary h4 animated fadeInUp">Best Training You will ever get</h6>
+                            <h1 class="text-white display-1 mb-4 animated fadeInRight">An Innovative AI based Learning
                             </h1>
-                            <p class="hints"></p>
-                            <div>
-                              <p class="output"><em>...diagnostic messages</em></p>
-                            </div>
+                            
                             <p class="mb-4 text-white fs-5 animated fadeInDown">Lorem ipsum dolor sit amet elit. Sed
                                 efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies
                                 tincidunt.</p>
@@ -1168,7 +1157,7 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
                     <span class="text-light"><a href="#" class="text-secondary"><i
-                                class="fas fa-copyright text-secondary me-2"></i>Your Site Name</a>, All right
+                                class="fas fa-copyright text-secondary me-2"></i>Guru AI Technology</a>, All right
                         reserved.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
@@ -1190,11 +1179,6 @@
     <!-- JavaScript Libraries -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
